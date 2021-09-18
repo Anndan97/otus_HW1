@@ -9,15 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Duck gg = new Duck("sd", "5", "5", "black");
-        //gg.Fly();
+        Duck gg = new Duck("sd", 5, "5", "black");
 
-        List<Animal> Animal_list = new ArrayList<>();
+        List<Animal> animal_list = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
         String answer = "";
         String answer_animal = "";
-        String name, age, weight, color = "";
+        String name, weight, color = "";
+        int age;
 
         while (!answer.equals("exit")) {
             System.out.println("menu");
@@ -34,31 +34,32 @@ public class Main {
                 System.out.println("Введите имя животного");
                 name = scanner.next().toLowerCase().trim();
                 System.out.println("Введите возраст животного");
-                age = scanner.next().toLowerCase().trim();
+                age = scanner.nextInt();
                 System.out.println("Введите вес животного");
                 weight = scanner.next().toLowerCase().trim();
                 System.out.println("Введите цвет животного");
                 color = scanner.next().toLowerCase().trim();
                 if (answer_animal.equals("cat")){
                     Cat cat_name = new Cat (name, age, weight,color);
-                    System.out.println(cat_name.getSay());
-                    Animal_list.add(cat_name);
+                    System.out.println(cat_name.Say());
+                    animal_list.add(cat_name);
                 }
                 else if (answer_animal.equals("dog")){
                     Dog dog_name = new Dog (name, age, weight,color);
-                    System.out.println(dog_name.getSay());
-                    Animal_list.add(dog_name);
+                    System.out.println(dog_name.Say());
+                    animal_list.add(dog_name);
                 }
                 else if (answer_animal.equals("duck")){
                     Duck duck_name = new Duck (name, age, weight,color);
-                    System.out.println(duck_name.getSay());
-                    Animal_list.add(duck_name);
+                    System.out.println(duck_name.Say());
+                    animal_list.add(duck_name);
                 }
             } else if (answer.equals(Move.list.toString())) {
-                System.out.println(Animal_list.toString());
+                System.out.println(animal_list.toString());
             } else if (answer.equals(Move.exit.toString())) {
             }
 
         }
+
     }
 }

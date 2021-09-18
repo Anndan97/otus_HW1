@@ -2,19 +2,19 @@ package com.company;
 
 public class Duck extends Animal implements Flying{
 
-    private String Say;
 
-    public Duck(String name, String age, String weigth, String color){
+    public Duck(String name, int age, String weigth, String color){
         super(name, age, weigth, color);
     }
 
-    public String getSay() {
-        return Say = "Кря";
+
+    @Override
+    public boolean Say() {
+        System.out.println("Кря");
+        return false;
     }
 
-    public void setSay(String say) {
-        Say = say;
-    }
+
 
     @Override
     public void Fly() {

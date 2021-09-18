@@ -1,58 +1,53 @@
 package com.company;
 
-public class Animal {
+public class Animal<iTens> {
 
-    private  String name;
-    private String age;
+    private String name;
+    private int age;
     private String weigth;
     private String color;
-    private String Say;
-    private String Go;
-    private String Drink;
-    private String Eat;
 
-    public Animal(String name, String age, String weigth, String color) {
+    public Animal(String name, int age, String weigth, String color) {
         this.name = name;
         this.age = age;
         this.weigth = weigth;
         this.color = color;
     }
 
-    public String getSay() {
-        return Say = "Я говорю";
+    public boolean Say() {
+        System.out.println("Я говорю!");
+        return false;
     }
 
-    public void setSay(String say) {
-        Say = "Я говорю";
+    public void Go() {
+        System.out.println("Я иду!");
     }
 
-    public String getGo() {
-        return Go = "Я иду";
+    public void Drink() {
+        System.out.println("Я пью!");
     }
 
-    public void setGo(String go) {
-        Go = go;
+    public void Eat() {
+        System.out.println("Я ем!");
     }
 
-    public String getDrink() {
-        return Drink = "Я пью";
-    }
-
-    public void setDrink(String drink) {
-        Drink = drink;
-    }
-
-    public String getEat() {
-        return Eat = "Я ем";
-    }
-
-    public void setEat(String eat) {
-        Eat = eat;
-    }
 
     @Override
     public String toString() {
-        return "Привет! Меня зовут " + name + " мне " + age + " лет, я вешу " + weigth + " мой цвет " + color;
-    }
+        int iTens = age % 10;
 
+//        String old = "";
+//
+//        if(iTens == 1){
+//            old = "год";
+//        }
+//        else if(iTens == 0 || iTens >= 5 && iTens <= 9){
+//            old = "лет";
+//        }
+//        else if(iTens >=2&&iTens <=4){
+//            old ="года";
+//        }
+        return "Привет! Меня зовут " + name + " мне " + age + " "
+                + ((iTens == 1)? "год" :((iTens < 5 & iTens !=0) ? "года": "лет"))+ ", я вешу " + weigth + " мой цвет " + color;
+    }
 }
